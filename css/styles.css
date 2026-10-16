@@ -4,16 +4,14 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: var(--space-lg);
 }
 
 .top {
     display: flex;
     flex-direction: column;
     text-align: center;
-
     gap: var(--space-lg);
-    padding: var(--space-3xl) var(--space-lg);
+    padding: var(--space-3xl) var(--space-lg) var(--space-lg);
 }
 
 .left {
@@ -57,6 +55,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
+    max-width: 600px;
 }
 
 .stars {
@@ -67,6 +66,55 @@
 .rating {
     font-size: var(--fs-sm);
     font-weight: var(--fw-normal);
+    scale: 1.2;
+}
+
+/* Bottom section */
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg)
+}
+
+.comment {
+    background-color: var(--Dark-Magenta);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    color: var(--White)
+}
+
+.commentor-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-block-end: var(--space-md);
+}
+
+.commentor-pfp {
+    width: 55px;
+    border-radius: var(--radius-circle)
+}
+
+.commentor-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentor-name,
+.commentor-state {
+    font-size: var(--fs-md)
+}
+
+.commentor-state {
+    color: var(--Soft-Pink)
+}
+
+.comment-desc {
+    font-size: 1.1rem;
 }
 
 /* Footer */
@@ -74,8 +122,13 @@
 .footer {
     font-size: var(--fs-xs);
     text-align: center;
+    background-color: var(--Dark-Magenta);
+    color: var(--Light-Grayish-Magenta);
+    padding: var(--space-md) 0;
+    margin-block-start: var(--space-lg);
 }
 
 .credit {
-    color: hsl(228, 45%, 44%);
+    color: var(--Dark-Grayish-Magenta);
+    text-decoration: none;
 }
