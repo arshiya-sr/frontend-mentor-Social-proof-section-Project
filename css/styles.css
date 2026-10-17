@@ -11,13 +11,18 @@
     flex-direction: column;
     text-align: center;
     gap: var(--space-lg);
-    padding: var(--space-3xl) var(--space-lg) var(--space-lg);
+
 }
 
 .left {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: var(--space-3xl) var(--space-lg) var(--space-lg);
+}
+
+.right {
+    padding: var(--space-3xl) var(--space-lg) var(--space-lg);
 }
 
 .title {
@@ -43,10 +48,12 @@
 .rating-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-lg);
 }
 
 .rating-bar {
+    width: clamp(300px, 300px + 15vw, 600px);
     list-style: none;
     background-color: var(--Light-Grayish-Magenta);
     padding: var(--space-md) 0;
@@ -75,10 +82,13 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    padding: var(--space-lg)
+    padding: var(--space-lg);
+    align-items: center;
 }
 
 .comment {
+    width: clamp(350px, 350px + 15vw, 450px);
+    height: clamp(274px, 274px + 2vw, 300px);
     background-color: var(--Dark-Magenta);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
@@ -131,4 +141,70 @@
 .credit {
     color: var(--Dark-Grayish-Magenta);
     text-decoration: none;
+}
+
+/* Desktop Layout */
+/* 64rem = 992px Based on default 16px HTML root font size */
+@media screen and (min-width: 64rem) {
+    .main {
+        padding: var(--space-3xl) var(--space-3xl) var(--space-lg);
+    }
+
+    .top {
+        flex-direction: row;
+    }
+
+    .left {
+        flex: 0.5;
+        text-align: left;
+        align-items: flex-start;
+        padding-inline-start: var(--space-3xl);
+    }
+
+    .title,
+    .description {
+        scale: 1;
+    }
+
+    .title {
+        font-size: var(--fs-3xl);
+        max-width: 70%;
+        line-height: var(--space-xl);
+    }
+
+    .description {
+        max-width: 80%;
+    }
+
+    .right {
+        flex: 0.5
+    }
+
+    .rating-bar:first-child {
+        align-self: flex-start;
+    }
+
+    .rating-bar:last-child {
+        align-self: flex-end;
+    }
+
+    /* Bottom */
+
+    .bottom {
+        flex-direction: row;
+        justify-content: center;
+        min-height: 350px;
+    }
+
+    .comment {
+        max-height: 248px;
+    }
+
+    .comment:first-child {
+        align-self: flex-start;
+    }
+
+    .comment:last-child {
+        align-self: flex-end;
+    }
 }
